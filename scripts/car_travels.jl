@@ -9,6 +9,12 @@ function update_position(X, V, dir, dt, L)
     return X, dir
 end
 
+# Unit tests
+using Test
+@test update_position(0.0, 10, 1, 1, 200) == (10,1)
+@test update_position(0.0, 10, -1, 1, 200) == (-10,1)
+@test update_position(0.0, 10, -1, 1, 200) == (-10,1)
+
 function car_travel_1D()
     # Physical parameters
     V     = 13.0          # speed, km/h
