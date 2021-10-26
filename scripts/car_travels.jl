@@ -31,4 +31,8 @@ function car_travel_1D()
     return T, X
 end
 
-T, X = car_travel_1D()
+# Only run this in an interactive session:
+if isinteractive()
+    println("Running model")
+    T, X = car_travel_1D()
+end
