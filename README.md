@@ -1,5 +1,7 @@
 # Showcase unit and integration testing
 
+![CI action](https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing.jl/actions/workflows/CI.yml/badge.svg)
+
 This is for Lecture 6 of course
 https://eth-vaw-glaciology.github.io/course-101-0250-00/
 
@@ -12,6 +14,7 @@ that commit history retraces that workflow:
   ([runtests.jl](https://github.com/mauro3/course-101-0250-00-L6Testing.jl/blob/bed8558c0a44d30da7b36f71bb975c9c3b4b50a8/test/runtests.jl))
 - use reference testing (via [ReferenceTest.jl](https://github.com/JuliaTesting/ReferenceTests.jl)) to do integration
   testing ([runtests.jl](https://github.com/mauro3/course-101-0250-00-L6Testing.jl/blob/0c48fae54f8b4f45d0cc2664bf1b0d9e8556399c/test/runtests.jl))
+- setup CI with github Actions
 
 Here a link to the commits:
 https://github.com/mauro3/course-101-0250-00-L6Testing.jl/commits/master
