@@ -1,4 +1,4 @@
-module L6Testing
+module L8Documentation
 
 greet() = print("Hello World!")
 
