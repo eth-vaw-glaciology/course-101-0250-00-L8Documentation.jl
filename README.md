@@ -11,4 +11,5 @@ which is as in [commit](https://github.com/eth-vaw-glaciology/course-101-0250-00
 
 Then adds documentation:
 - doc-tests (commit
--
+- Documenter.jl
+- Literate.jl

@@ -1,13 +1,10 @@
-# # Car travel in 1D
-#
-# How a car travels back and forth between two locations.
+# Car travel in 1D
 
+How a car travels back and forth between two locations.
+
+````julia
 using Plots
-try # on my computer GR, the default backend crashes Julia
-    pyplot() # run with PyPlot.jl, if installed
-catch
-    nothing
-end
+pyplot()
 
 """
     update_position(X, V, dir, dt, L)
@@ -16,7 +13,7 @@ Return updated position of car and new travel direction;
 given, old postion `X`, speed `V`, direction `dir`, time step `dt`
 and domain size `L`.
 
-## Example
+# Example
 ```jldoctest
 julia> update_position(0.0, 10, 1, 1, 200)
 (10.0, 1)
@@ -38,31 +35,38 @@ end
 Run the model.
 """
 function car_travel_1D()
-    ## Physical parameters
+    # Physical parameters
     V     = 43.0           # speed, km/h
     L     = 200.0          # length of segment, km
     dir   = 1              # switch 1 = go right, -1 = go left
     ttot  = 16.0           # total time, h
-    ## Numerical parameters
+    # Numerical parameters
     dt    = 0.1            # time step, h
     nt    = Int(cld(ttot, dt))  # number of time steps
-    ## Array initialisation
+    # Array initialisation
     T     = zeros(nt)
     X     = zeros(nt)
-    ## Time loop
+    # Time loop
     for it = 2:nt
         T[it] = T[it-1] + dt
         X[it], dir = update_position(X[it-1], V, dir, dt, L)
     end
-    ## Visualisation
+    # Visualisation
     return T, X
 end
+````
 
-#-
+````
+Main.##314.car_travel_1D
+````
 
-## Only run this in an interactive session:
+````julia
+# Only run this in an interactive session:
 if isinteractive()
     println("Running model")
     T, X = car_travel_1D()
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)
 end
+````
+![](1091186760.png)
+
