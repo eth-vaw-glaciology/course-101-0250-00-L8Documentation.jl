@@ -3,10 +3,16 @@
 # How a car travels back and forth between two locations.
 
 using Plots
-try # on my computer GR, the default backend crashes Julia
-    pyplot() # run with PyPlot.jl, if installed
+
+# On my computer GR, the default backend crashes Julia, thus this:
+try
+    pyplot() # run with PyPlot.jl backend, if installed
 catch
-    nothing
+    nothing # run with GR.jl backend
+end
+
+if !@isdefined plotyes
+    plotyes = true
 end
 
 """
@@ -61,7 +67,7 @@ end
 #-
 
 ## Only run this in an interactive session:
-if isinteractive()
+if plotyes
     println("Running model")
     T, X = car_travel_1D()
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)

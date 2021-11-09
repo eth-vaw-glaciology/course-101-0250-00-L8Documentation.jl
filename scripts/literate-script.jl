@@ -1,4 +1,5 @@
 using Literate
 
-directory_of_this_file = @__DIR__
-Literate.markdown("../scripts/car_travels.jl", directory_of_this_file, execute=true, documenter=false, credit=false)
+# directory where the markdown files are put
+md_dir = joinpath(@__DIR__, "md")
+Literate.markdown("car_travels.jl", md_dir, execute=true, documenter=false, credit=false)

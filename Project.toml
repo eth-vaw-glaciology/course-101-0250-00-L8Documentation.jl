@@ -4,7 +4,6 @@ authors = ["Mauro Werder <mauro3@runbox.com>"]
 version = "0.1.0"
 
 [deps]
-BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
 Literate = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 ReferenceTests = "324d217c-45ce-50fc-942e-d289b448e8cf"
