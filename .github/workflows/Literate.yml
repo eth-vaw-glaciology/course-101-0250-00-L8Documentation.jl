@@ -29,7 +29,7 @@ jobs:
       - uses: julia-actions/julia-buildpkg@v1
 
       - name: run Literate
-        run: julia --color=yes --project -e 'cd("scripts"); include("literate-script.jl")'
+        run: QT_QPA_PLATFORM=offscreen julia --color=yes --project -e 'cd("scripts"); include("literate-script.jl")'
 
       - name: setup git config
         run: |

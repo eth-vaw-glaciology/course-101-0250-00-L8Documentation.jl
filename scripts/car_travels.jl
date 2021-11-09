@@ -72,3 +72,4 @@ if plotyes
     T, X = car_travel_1D()
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)
 end
+# Figure showing how the car bounces back and forth, nice!
