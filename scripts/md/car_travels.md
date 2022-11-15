@@ -70,7 +70,7 @@ end
 ````
 
 ````
-Main.##257.car_travel_1D
+Main.var"##312".car_travel_1D
 ````
 
 ````julia
@@ -81,7 +81,7 @@ if plotyes
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)
 end
 ````
-![](2053175991.png)
+![](car_travels-5.svg)
 
 Figure showing how the car bounces back and forth, nice!
 
