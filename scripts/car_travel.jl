@@ -1,19 +1,12 @@
 # # Car travel in 1D
 #
 # How a car travels back and forth between two locations.
+#
+# Note that a comment which is on a line by itself, will render as a markdown line and
+# thus create a new "notebook block" after it.
+# Thus many comments are preceded by `##` to avoid this.
 
 using Plots
-
-# On my computer GR, the default backend crashes Julia, thus this:
-try
-    pyplot() # run with PyPlot.jl backend, if installed
-catch
-    nothing # run with GR.jl backend
-end
-
-if !@isdefined plotyes
-    plotyes = true
-end
 
 """
     update_position(X, V, dir, dt, L)
@@ -45,7 +38,7 @@ Run the model.
 """
 function car_travel_1D()
     ## Physical parameters
-    V     = 43.0           # speed, km/h
+    V     = 113.0          # speed, km/h
     L     = 200.0          # length of segment, km
     dir   = 1              # switch 1 = go right, -1 = go left
     ttot  = 16.0           # total time, h
@@ -58,16 +51,16 @@ function car_travel_1D()
     ## Time loop
     for it = 2:nt
         T[it] = T[it-1] + dt
-        X[it], dir = update_position(X[it-1], V, dir, dt, L)
+        X[it], dir = update_position(X[it - 1], V, dir, dt, L)
     end
-    ## Visualisation
+
     return T, X
 end
 
 #-
 
 ## Only run this in an interactive session:
-if plotyes
+if isinteractive() # do not run this when including this script from other scripts
     println("Running model")
     T, X = car_travel_1D()
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)
