@@ -8,6 +8,11 @@
 
 using Plots
 
+## set a flag to do plotting.  This is set to false during testing.
+if !@isdefined plotyes
+    plotyes = true
+end
+
 """
     update_position(X, V, dir, dt, L)
 
@@ -56,13 +61,11 @@ function car_travel_1D()
 
     return T, X
 end
+T, X = car_travel_1D();
 
 #-
 
-## Only run this in an interactive session:
-if isinteractive() # do not run this when including this script from other scripts
-    println("Running model")
-    T, X = car_travel_1D()
+if plotyes # do not run this when including this script from other scripts
     plot(T, X, markersize=5, xlabel="time, hrs", ylabel="distance, km", framestyle=:box, legend=:none)
 end
 # Figure showing how the car bounces back and forth, nice!
