@@ -7,7 +7,6 @@ https://eth-vaw-glaciology.github.io/course-101-0250-00/
 
 This builds on
 https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing.jl
-which is as in [commit](https://github.com/eth-vaw-glaciology/course-101-0250-00-L8Documentation.jl/tree/as-course-101-0250-00-L6Testing.jl).
 
 Then adds documentation via:
 - doc-strings
@@ -15,4 +14,4 @@ Then adds documentation via:
 - Literate via Github Actions:
   [Literate.yml](.github/workflows/Literate.yml)
   - this auto generates the markdown-file (and figure)
-    [car_travels.md](scripts/md/car_travels.md) upon push to github
+    [car_travel.md](scripts/md/car_travel.md) upon push to github

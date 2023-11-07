@@ -1,7 +1,7 @@
 using Test#, ReferenceTests, BSON
 
 plotyes = false
-include("../scripts/car_travels.jl")
+include("../scripts/car_travel.jl")
 
 ## Unit tests
 @testset "update_position" begin
